@@ -1,4 +1,4 @@
-# ez-calculator
+# EZ-Calculator
 
 ez-calculator is a Node.js package for performing some math operations and functions.
 
@@ -12,9 +12,9 @@ It is possible to install using the git repo:
 npm install --save https://github.com/enekodr/ez-calculator.git
 ```
 ## Usage
-In the node project:
-```
-var calc = require('ez-calculator')
+In 'file.js':
+```javascript
+var calc = require('ez-calculator');
 ```
 
 ## Methods
@@ -36,3 +36,23 @@ Returns an array with the factors of **n**
 Returns an array containing all the primes numbers before **n**
 ##### fibonazziBefore(n)
 Returns an array containing all the numbers of Fibonazzi series before **n**
+
+## Examples
+Writes in console some interesting data
+```javascript
+var calc = require('ez-calculator');
+
+console.log(calc.areAmicable(220, 284));
+console.log(calc.factors(1116));
+```
+
+Tells which numbers are prime in the Fibonazzi series before the number `100`
+```javascript
+var calc = require('ez-calculator');
+
+var fibonazzies = calc.fibonazziBefore(100)
+for (var i = 0; i < fibonazzies.length; i++) {
+  if (calc.isPrime(fibonazzies[i])) {
+    console.log(fibonazzies[i] + ' is prime and is in Fibonazzi series');
+  }
+}
