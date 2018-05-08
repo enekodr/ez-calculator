@@ -1,0 +1,14 @@
+{
+  "name": "ez-calculator",
+  "version": "1.0.0",
+  "description": "A calculator where the developer can enter a whole operation as a string to get the result",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "eneko"
+  ],
+  "author": "Eneko Díaz Romero <contacto@enekodiaz.es> (https://enekodiaz.es)",
+  "license": "ISC"
+}
