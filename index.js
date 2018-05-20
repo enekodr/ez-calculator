@@ -106,15 +106,15 @@ function parseParentheses (operation) {
 }
 
 function parseMathLib (operation) {
+    // Reverses the string since javascript is not compatible with Negative Lookbehind regex '(?<! )' but with Negative Lookahead
+    // This allows the regexp to search strings such as 'sin' or 'cos' with no 'Math.' before
+    operation = operation.split('').reverse().join('')
+
     // Searches for Math library functions and adds a 'Math.' to match the correct syntax
-    var expression = operation.search(/(sin|cos|tan|arcsin|arccos|arctan|sqrt)/)
-    var mathLib = operation.indexOf('Math.')
+    var expression, regexp = new RegExp(/(nis|soc|nat|niscra|soccra|natcra|trqs)(?!\.htaM)/)
 
-    while ((expression >= 0 && mathLib < 0) && mathLib != expression - 5) {
-        operation = operation.substr(0, expression) + 'Math.' + operation.substr(expression)
-        expression = operation.indexOf('sin')
-        mathLib = operation.indexOf('Math.')
-    }
+    while (expression = regexp.exec(operation))
+        operation = operation.substr(0, operation.indexOf(expression[0]) + expression[0].length) + '.htaM' + operation.substr(operation.indexOf(expression[0]) + expression[0].length)
 
-    return operation
+    return operation.split('').reverse().join('')
 }
