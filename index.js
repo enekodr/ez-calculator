@@ -1,5 +1,3 @@
-var radians = false;
-
 exports.calculate = function (operation) {
 
     operation = parseParentheses(operation)
@@ -15,12 +13,8 @@ exports.calculate = function (operation) {
     
 }
 
-exports.setRadians = function (value) {
-    var radians = value
-}
-
 exports.degToRad = function (degrees) {
-    return Math.radians(degrees)
+    return degrees * Math.PI / 180
 }
 
 
